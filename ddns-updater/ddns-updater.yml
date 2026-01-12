@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ddns-updater:
+    image: qmcgaw/ddns-updater:latest
+    container_name: ddns-updater
+    network_mode: bridge
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - /volume2/docker/ddns-updater:/updater/data
+    user: "1026:100"
