@@ -2,6 +2,7 @@ version: "3.8"
 services:
   ddns-updater:
     image: qmcgaw/ddns-updater:latest
+    pull_policy: always
     container_name: ddns-updater
     network_mode: bridge
     restart: unless-stopped
