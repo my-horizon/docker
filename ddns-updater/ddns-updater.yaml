@@ -4,7 +4,6 @@ services:
     image: qmcgaw/ddns-updater:latest
     pull_policy: always
     container_name: ddns-updater
-    network_mode: bridge
     restart: unless-stopped
     ports:
       - 8083:8000

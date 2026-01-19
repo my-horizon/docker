@@ -4,7 +4,6 @@ services:
     image: portainer/portainer-ce:latest
     pull_policy: always
     container_name: portainer
-    network_mode: bridge
     restart: unless-stopped
     ports:
       - 8080:9000
