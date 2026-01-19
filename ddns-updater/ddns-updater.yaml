@@ -7,7 +7,7 @@ services:
     network_mode: bridge
     restart: unless-stopped
     ports:
-      - 8000:8000
+      - 8083:8000
     volumes:
       - /volume2/docker/ddns-updater:/updater/data
     user: "1026:100"
