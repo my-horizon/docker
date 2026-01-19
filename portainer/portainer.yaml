@@ -7,7 +7,7 @@ services:
     network_mode: bridge
     restart: unless-stopped
     ports:
-      - 9000:9000
+      - 8080:9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./portainer_data:/data
+      - /volume2/docker/portainer/portainer_data:/data
