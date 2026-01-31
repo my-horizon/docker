@@ -5,7 +5,7 @@ services:
     container_name: ddns-updater
     restart: unless-stopped
     ports:
-      - 8083:8000
+      - 8082:8000
     volumes:
       - /volume2/docker/ddns-updater:/updater/data
     user: "1026:100"
