@@ -1,0 +1,22 @@
+services:
+  nextcloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - 8180:80
+    volumes:
+      - /volume1/data:/external/data
+      - /volume2/docker/nextcloud/html:/var/www/html
+    environment:
+      - MYSQL_HOST=mariadb
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=changeme
+      - NEXTCLOUD_TRUSTED_DOMAINS=192.168.10.150 localhost
+    networks:
+      - mariadb_default
+
+networks:
+  mariadb_default:
+    external: true
