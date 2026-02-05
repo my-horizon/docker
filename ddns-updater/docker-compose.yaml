@@ -1,7 +1,6 @@
 services:
   ddns-updater:
     image: qmcgaw/ddns-updater:latest
-    pull_policy: always
     container_name: ddns-updater
     restart: unless-stopped
     ports:
