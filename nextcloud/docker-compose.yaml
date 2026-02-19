@@ -24,7 +24,8 @@ services:
     volumes:
       - /volume1/data:/external/data
       - /volume2/docker/nextcloud/html:/var/www/html
-    entrypoint: /cron.sh
+    entrypoint:
+      - /cron.sh
     depends_on:
       - nextcloud
     networks:
