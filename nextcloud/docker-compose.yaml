@@ -17,6 +17,19 @@ services:
     networks:
       - mariadb_default
 
+  nextcloud-cron:
+    image: nextcloud:latest
+    container_name: nextcloud-cron
+    restart: unless-stopped
+    volumes:
+      - /volume1/data:/external/data
+      - /volume2/docker/nextcloud/html:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - nextcloud
+    networks:
+      - mariadb_default
+
 networks:
   mariadb_default:
     external: true
