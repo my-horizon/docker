@@ -1,0 +1,10 @@
+services:
+  ddns-updater:
+    image: qmcgaw/ddns-updater:latest
+    container_name: ddns-updater
+    restart: unless-stopped
+    ports:
+      - 8082:8000
+    volumes:
+      - /volume2/docker/ddns-updater:/updater/data
+    user: "1026:100"
